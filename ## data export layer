@@ -1,0 +1,16 @@
+Data Export Mode:
+
+- Data Export Destination: You configure LaunchDarkly to export flag evaluation events to Amazon Kinesis.
+- Real-Time Analysis: Your data engineers build a pipeline that processes this data in real-time, providing insights into how users are interacting with different feature flags (e.g., how many users are seeing a new feature).
+
+- Historical Reporting: All feature flag events are stored in a data warehouse or log analytics platform for future analysis.
+- Debugging: If a bug is reported related to a new feature, you can check the historical feature flag evaluation data to see which users were affected by a certain flag value.
+- Auditing: If required, you can generate reports that show when specific flags were turned on or off and for which users, ensuring full transparency for audits or regulatory compliance.
+### Summary of Data Export Mode
+- Purpose: Allows you to export detailed feature flag evaluation data and other events from LaunchDarkly for storage, analysis, and monitoring.
+- Use Cases: Analytics, compliance, debugging, and long-term data retention.
+- Destinations: Supports export to various platforms like Amazon Kinesis, Google Pub/Sub, Azure Event Hubs, and Splunk.
+-Management: Requires you to handle the external storage or processing of the exported data, such as building data pipelines or dashboards in external tools.
+
+### Conclusion 
+In contrast to the Relay Proxy, which is more focused on optimizing flag delivery performance within your infrastructure, Data Export Mode focuses on getting detailed insights into how your feature flags are being used and how they are impacting your application over time.
